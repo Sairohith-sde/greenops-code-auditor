@@ -26,10 +26,22 @@ app.add_middleware(
 )
 
 
+@app.get("/", status_code=status.HTTP_200_OK)
+def root():
+    """Root endpoint welcoming API clients."""
+    return {
+        "service": "GreenOps Code Auditor API",
+        "status": "online",
+        "health_check": "/api/health",
+        "documentation": "/docs",
+    }
+
+
 @app.get("/api/health", status_code=status.HTTP_200_OK)
 def health_check():
     """Service health check endpoint."""
     return {"status": "healthy", "service": "GreenOps API"}
+
 
 
 @app.post("/api/audit", response_model=GreenOpsAudit, status_code=status.HTTP_200_OK)
