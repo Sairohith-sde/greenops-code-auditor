@@ -4,6 +4,10 @@ server/venv/
 venv/
 .venv/
 
+# Hackathon local submission cheat sheet
+SUBMISSION_FORM_ANSWERS.md
+
+
 # Environment Variables
 .env
 .env.local
