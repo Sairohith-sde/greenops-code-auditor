@@ -1,8 +1,14 @@
 import os
+import sys
+
+# Ensure server directory is in python module search path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from dotenv import load_dotenv
 from google import genai
 from google.genai import types
 from schemas import GreenOpsAudit
+
 
 load_dotenv()
 

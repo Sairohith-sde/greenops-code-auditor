@@ -1,7 +1,14 @@
+import os
+import sys
+
+# Ensure server directory is in python module search path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
 from schemas import CodeRequest, GreenOpsAudit
 from ai_service import analyze_code
+
 
 app = FastAPI(
     title="GreenOps Code Auditor API",
