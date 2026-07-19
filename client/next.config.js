@@ -1,8 +1,10 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: path.join(__dirname, '../'),
   typescript: {
-    // Ensures hackathon production build on Vercel never fails on strict type checks
     ignoreBuildErrors: true,
   },
   eslint: {
